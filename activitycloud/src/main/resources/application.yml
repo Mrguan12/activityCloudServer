@@ -1,0 +1,23 @@
+spring:
+    profiles:
+#    active: prod
+        active: dev
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://127.0.0.1:1433;database=my
+        username: root
+        password: 1234
+    jpa:
+        hibernate:
+#            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+        show-sql: true
+
+pagehelper:
+    helperDialect: sqlserver
+    reasonable: true
+    supportMethodsArguments: true
+    pageSizeZero: true
+    params: count=countSql
